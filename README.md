@@ -20,14 +20,36 @@ Create a Virtual Machine (VM) to start your interactive analysis. Follow [these]
 
 You can select one of the following common cloud environments:-
 
-- [Jupyter:](https://support.terra.bio/hc/en-us/articles/5075814468379-Starting-and-customizing-your-Jupyter-app) For Python programming language.
-- [Rstudio:](https://support.terra.bio/hc/en-us/articles/5075722115227) For R statistical software.
+- [Jupyter:](https://support.terra.bio/hc/en-us/articles/5075814468379-Starting-and-customizing-your-Jupyter-app) For analysis in Python programming language.
+- [Rstudio:](https://support.terra.bio/hc/en-us/articles/5075722115227) For analysis R statistical software.
 
 They both come with a `terminal` for writing bash commands.
 
 ## Bring in your code from GitHub
+
+
+
 ## Bring in your data from Terra Workspace
+
+
+
 ## Perform your Analysis
+
+
+
 ## Export your output(s) to Terra Workspace
+
+
+
 ## Push your code/scripts to GitHub
+
+
+
+
 ## Shut down the VM
+
+
+
+
+
+
