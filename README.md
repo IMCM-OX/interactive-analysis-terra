@@ -15,8 +15,8 @@ NOTE: It DOES NOT cover nor teach how to methodically perform an analysis, but i
 2. [Bring in your code from GitHub](#bring-in-your-code-from-github)
 3. [Bring in your data from Terra Workspace](#bring-in-your-data-from-terra-workspace)
   4. [Perform your Analysis](#perform-your-analysis)
-5. [Export your output(s) to Terra Workspace](#export-your-output(s)-to-terra-workspace)
-6. [Push your code/scripts to GitHub](#push-your-code/scripts-to-github")
+5. [Export your output to Terra Workspace](#export-your-output-to-terra-workspace)
+6. [Push your code & scripts to GitHub](#push-your-code-&-scripts-to-github")
 7. [Shut down the VM](#shut-down-the-vm)
 
 
@@ -125,7 +125,7 @@ This is important in 3 ways:-
 Any analysis effort, processed data or plots and documents should be deposited in this folder. You can have expand the organization inside this folder to include further sub-folders as needed.
 
 
-## Export your output(s) to Terra Workspace
+## Export your output to Terra Workspace
 
 Once done with your analysis effort, it's time to start doing housekeeping. First, if created files or products of an analysis inside the `output` folder that you want fed back to a Terra workspace for storage, this is the time. The process is almost similar to copying raw data into `data` subfolder using `gsutil` command line tools.
 
@@ -140,7 +140,7 @@ system(command = "gsutil cp  output/some_file(s)  `gs://path_to_terra_workspace/
 
 This ensure that the files or data generated from an analysis that needs to be re-used later is safely stored in a respective Terra workspace and are not lost in the event we shut down the VM and delete the PD.
 
-## Push your code/scripts to GitHub
+## Push your code & scripts to GitHub
 
 Your analysis output is safe in a Terra workspace, now it's time to give our `upadted` analysis code/script a safe home as well 🙂.
 
