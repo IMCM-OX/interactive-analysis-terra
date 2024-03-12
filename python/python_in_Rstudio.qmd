@@ -1,0 +1,150 @@
+---
+title: "Basics of Data Visualisation in Python Using Matplotlib"
+author: "From: The Python Coding Book website"
+format: 
+  html:
+    theme: flatly
+    page-layout: full
+    toc: true
+    number-sections: true
+    css: quarto_layout.css
+    grid: 
+      body-width: 1000px
+      margin-width: 300px
+date: "2024-01-15"
+date-modified: "`r format(Sys.Date(), '%d %B, %Y')`"
+smooth-scroll: true
+title-block-banner: true
+jupyter: python3
+---
+
+## Introduction
+
+More and more applications of programming using Python involve large amounts of data. Visualising those data is an essential part of understanding what the data say, as every scientist, data scientist, and anyone who works with data will confirm. Displaying data visually is important for those studying the data and also for those to whom the data is presented. In this Chapter, you’ll learn about the basics of data visualisation in Python.
+
+There are several third-party modules in Python that you can use to visualise data. One of the most important of these is Matplotlib. There are also newer modules that are very popular in specific applications. However, Matplotlib remains the most widely-used data visualisation module across Python in general. Even if you’ll eventually move to other visualisation libraries, a good knowledge of Matplotlib is essential. You can also translate many of the concepts you’ll learn about in this Chapter to other libraries that are used for data visualisation in Python.
+
+
+
+## Import  libraries
+
+```{python}
+# import favourite libraries
+import matplotlib.pyplot as plt
+
+# Create sythetic data for demo
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+steps_walked = [8934, 14902, 3409, 25672, 12300, 2023, 6890]
+steps_last_week = [9788, 8710, 5308, 17630, 21309, 4002, 5223]
+```
+
+
+## Weekly steps walked
+
+You call plot() twice in the code above. One call plots the data in steps_walked. The format string you use is "o-g" which represents green circle markers and a solid line. The second call to plot() has steps_last_week as its second argument and the format string "v--m" which represents magenta triangle markers connected with a dashed line.
+
+You also include a call to the grid() function, which allows you to toggle a grid displayed on the graph. The code above gives the following output:
+
+```{python}
+plt.plot(days, steps_walked, "o-g")
+plt.plot(days, steps_last_week, "v--m")
+plt.title("Step count | This week and last week")
+plt.xlabel("Days of the week")
+plt.ylabel("Steps walked")
+plt.grid(True)
+plt.legend(["This week", "Last week"])
+plt.show()
+```
+
+
+## Do something else
+
+Since you’re creating a 1x2 grid of subplots, the array axs is also a 1x2 array. Therefore, axs[0] is the Axes object representing the first set of axes in the figure. This code gives the following output:
+
+```{python}
+fig, axs = plt.subplots(1, 2)
+# Plot line chart
+axs[0].plot(days, steps_walked, "o-g")
+axs[0].plot(days, steps_last_week, "v--m")
+axs[0].set_title("Step count | This week and last week")
+axs[0].set_xlabel("Days of the week")
+axs[0].set_ylabel("Steps walked")
+axs[0].grid(True)
+# Plot bar chart
+axs[1].bar(days, steps_walked)
+axs[1].bar(days, steps_last_week)
+axs[1].set_title("Step count | This week and last week")
+axs[1].set_xlabel("Days of the week")
+axs[1].set_ylabel("Steps walked")
+axs[1].grid(True)
+plt.show()
+```
+
+
+## Customising the bar plot
+
+You can fix this by shifting each plot sideways so that they don’t overlap. Up until now, you used the list days as the data in the x-axis. You can get more control over where the bars are plotted by using a list of numbers instead. Start by creating two sets of x-coordinates for the two sets of bars. You can then use these lists as the first argument in the calls to bar(). You can also fix the cramming problem at this stage by setting the figure size when you call plt.subplots():
+
+
+```{python}
+fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+# Plot line chart
+axs[0].plot(days, steps_walked, "o-g")
+axs[0].plot(days, steps_last_week, "v--m")
+axs[0].set_title("Step count | This week and last week")
+axs[0].set_xlabel("Days of the week")
+axs[0].set_ylabel("Steps walked")
+axs[0].grid(True)
+# Plot bar chart
+x_range_current = [-0.2, 0.8, 1.8, 2.8, 3.8, 4.8, 5.8]
+x_range_previous = [0.2, 1.2, 2.2, 3.2, 4.2, 5.2, 6.2]
+axs[1].bar(x_range_current, steps_walked)
+axs[1].bar(x_range_previous, steps_last_week)
+axs[1].set_title("Step count | This week and last week")
+axs[1].set_xlabel("Days of the week")
+axs[1].set_ylabel("Steps walked")
+axs[1].grid(True)
+plt.show()
+```
+
+
+## Making the code more Pythonic!
+
+When writing code, it’s often convenient to hardwire values in the code as you try out and explore options. However, you should aim to refactor your code to tidy it up when possible. Refactoring means making some changes to how the code looks, but not what it does, to make the code more future-proof and easier to read and maintain.
+
+Now that you know the width of the bars and how much to shift them, you can refactor your code as follows:
+
+
+```{python}
+fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+# Plot line chart
+axs[0].plot(days, steps_walked, "o-g")
+axs[0].plot(days, steps_last_week, "v--m")
+axs[0].set_title("Line graph")
+axs[0].set_xlabel("Days of the week")
+axs[0].set_ylabel("Steps walked")
+axs[0].grid(True)
+# Plot bar chart
+bar_width = 0.4
+x_range_current = [idx - bar_width/2 for idx in range(7)]
+x_range_previous = [idx + bar_width/2 for idx in range(7)]
+axs[1].bar(x_range_current, steps_walked, width=bar_width, color="g")
+axs[1].bar(x_range_previous, steps_last_week, width=bar_width, color="m")
+axs[1].set_title("Bar chart")
+axs[1].set_xlabel("Days of the week")
+axs[1].set_ylabel("Steps walked")
+axs[1].grid(True)
+axs[1].set_xticks(range(7))
+axs[1].set_xticklabels(days)
+# Figure-wide components
+fig.suptitle("Step count | This week and last week")
+fig.legend(["This week", "Last week"])
+plt.show()
+```
+
+
+
+
+
+
+

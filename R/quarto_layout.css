@@ -1,0 +1,12 @@
+h2, h3, h4, h5, h6, legend {
+    color: #002147;
+    font-family: Arial;
+    font-size: 25px;
+}
+
+
+
+.title {
+  text-align: center;
+  font-size: 40px
+}

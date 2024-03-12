@@ -1,0 +1,39 @@
+---
+title: "Basics of Data Visualisation in R Using ggplot2"
+author: "From: The ggplot2 cook Book website"
+format: 
+  html:
+    theme: flatly
+    page-layout: full
+    toc: true
+    number-sections: true
+    css: quarto_layout.css
+    grid: 
+      body-width: 1000px
+      margin-width: 300px
+date: "2024-01-15"
+date-modified: "`r format(Sys.Date(), '%d %B, %Y')`"
+smooth-scroll: true
+title-block-banner: true
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this 
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
