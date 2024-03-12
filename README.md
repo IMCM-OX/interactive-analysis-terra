@@ -161,6 +161,12 @@ git psh                                       # push to GitHub your "new scripts
 
 ## Shut down the VM
 
+Now, it's end of an analysis task. Your `output`s are safe in a Terra workspace and your codes are version-ed and pushed into GitHub, it's highly recommended you shut down your VM to avoid incurring costs.
+
+While shutting down the VM, you can either:-
+
+- Delete the VM and the PD (all generated files are lost, but good thing we had stored them already)
+- Delete the VM and spare the PD (You loose the CE configuration, but you get to keep all the files in the PD)
 
 
 
