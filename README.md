@@ -1,6 +1,13 @@
 # Interactive Analysis on Terra
 
-Demo for Interactive Analysis on Terra.Bio
+This repository and associated files is meant for a toy demo for Interactive Analysis on Terra.Bio cloud platform.
+
+NOTE: It DOES NOT cover nor teach how methodically perform an analysis, but it acts as "cookbook" of best practices to easy your pain while working interactively on Terra; specifically
+
+- Files/code organization
+- Data handling and organization
+- Associated output handling and archiving/storage.
+- Version control and collaboration
 
 # Contents
 
