@@ -47,3 +47,17 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+
+# Exclude data and outpu folders
+data/
+output/
+
+# Exclude specific file extensions
+*.rds
+*.pdf
+
+
+
+
+
