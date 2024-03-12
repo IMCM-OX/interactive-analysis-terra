@@ -16,7 +16,7 @@ NOTE: It DOES NOT cover nor teach how to methodically perform an analysis, but i
 3. [Bring in your data from Terra Workspace](#bring-in-your-data-from-terra-workspace)
   4. [Perform your Analysis](#perform-your-analysis)
 5. [Export your output to Terra Workspace](#export-your-output-to-terra-workspace)
-6. [Push your code & scripts to GitHub](#push-your-code-&-scripts-to-github")
+6. [Push your code and scripts to GitHub](#push-your-code-and-scripts-to-github")
 7. [Shut down the VM](#shut-down-the-vm)
 
 
@@ -140,7 +140,7 @@ system(command = "gsutil cp  output/some_file(s)  `gs://path_to_terra_workspace/
 
 This ensure that the files or data generated from an analysis that needs to be re-used later is safely stored in a respective Terra workspace and are not lost in the event we shut down the VM and delete the PD.
 
-## Push your code & scripts to GitHub
+## Push your code and scripts to GitHub
 
 Your analysis output is safe in a Terra workspace, now it's time to give our `upadted` analysis code/script a safe home as well 🙂.
 
