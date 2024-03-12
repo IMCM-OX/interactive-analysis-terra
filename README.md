@@ -34,9 +34,35 @@ They both come with a `terminal` for writing bash commands.
 
 ## Bring in your code from GitHub
 
+NOTE: For a first time, it's recommended that you create a repository via [GitHub](https://github.com/), with a bare minimum of two files, the `README.md` and `.gitignore`. These are easily included once you enable the check-boxes during creation process.
 
+Once you have your repository ready or if using an existing repository, `clone` the repository into your cloud environment in the VM. For Rstudio, instructions on how to do this can be found in this [confluence](https://oxgskimcm.atlassian.net/wiki/spaces/TerraBio/pages/45514753/Working+with+Git+GitHub+on+terra) page or in this [blog post](https://nceas.github.io/oss-lessons/version-control/4-getting-started-with-git-in-RStudio.html)
+
+
+Generally, to clone your repository into Jupyter VM:-
+
+- Go to your GitHub repo, click on the green button labelled "Code", copy the `HTTPS` link.
+- In the terminal, run the command `git clone https_link`
+
+```bash
+# clone your code repository into the CE
+
+git clone https://github.com/IMCM-OX/interactive-analysis-terra.git
+
+```
+
+This pulls all your code and files from the remote repository into Terra CE and you can start editing/working on them immediately.
 
 ## Bring in your data from Terra Workspace
+
+Once you have all codes/scripts in the C.E, next is to bring your data for analysis from a Terra workspace. For a better and reproducible structure, we recommend you create two sub-folders in your clone github folder directory:-
+
+- **data:** This is the destination your raw data that you shall copy from a workspace
+- **output:** This is the destination of any output (plot, pdf, processed data etc) emanating from your data analysis efforts.
+
+In R, this can be done dynamically like so:-
+
+
 
 
 

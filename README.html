@@ -354,27 +354,69 @@ display: none;
 
 <div id="interactive-analysis-on-terra" class="section level1">
 <h1>Interactive Analysis on Terra</h1>
-<p>Demo for Interactive Analysis on Terra.Bio</p>
+<p>This repository and associated files is meant for a toy demo for
+Interactive Analysis on Terra.Bio cloud platform.</p>
+<p>NOTE: It DOES NOT cover nor teach how to methodically perform an
+analysis, but it acts as “cookbook” of best practices to ease your pain
+while working interactively on Terra; specifically:-</p>
+<ul>
+<li>Files/code organization.</li>
+<li>Data handling and organization.</li>
+<li>Associated output handling and archiving/storage.</li>
+<li>Version control and collaboration.</li>
+</ul>
 </div>
 <div id="contents" class="section level1">
 <h1>Contents</h1>
 <ol style="list-style-type: decimal">
-<li><a href="#create-vm">Create a VM</a></li>
-<li><a href="#bring-code">Bring in your code from GitHub</a></li>
-<li><a href="#bring-data">Bring in your data from Terra
-Workspace</a></li>
-<li><a href="#peform-analysis">Perform your Analysis</a></li>
-<li><a href="#export-output">Export your output(s) to Terra
-Workspace</a></li>
-<li><a href="#version-control-code">Push your code/scripts to
+<li><a href="#create-a-vm">Create a VM</a></li>
+<li><a href="#bring-in-your-code-from-github">Bring in your code from
 GitHub</a></li>
-<li><a href="#shut-vm">Shut down the VM</a></li>
+<li><a href="#bring-in-your-data-from-terra-workspace">Bring in your
+data from Terra Workspace</a></li>
+<li><a href="#perform-your-analysis">Perform your Analysis</a></li>
+<li><a href="#export-your-output(s)-to-terra-workspace">Export your
+output(s) to Terra Workspace</a></li>
+<li><a href="#push-your-code/scripts-to-github%22">Push your
+code/scripts to GitHub</a></li>
+<li><a href="#shut-down-the-vm">Shut down the VM</a></li>
 </ol>
 <div id="create-a-vm" class="section level2">
 <h2>Create a VM</h2>
+<p>Create a Virtual Machine (VM) to start your interactive analysis.
+Follow <a href="https://support.terra.bio/hc/en-us/articles/360038125912-Your-interactive-analysis-VM-Cloud-Environment#h_01EWE22VY089T7SVA9J403CD48">these</a>
+instructions to get you there.</p>
+<p>You can select one of the following common cloud environments:-</p>
+<ul>
+<li><a href="https://support.terra.bio/hc/en-us/articles/5075814468379-Starting-and-customizing-your-Jupyter-app">Jupyter:</a>
+For analysis in Python programming language.</li>
+<li><a href="https://support.terra.bio/hc/en-us/articles/5075722115227">Rstudio:</a>
+For analysis in R statistical software.</li>
+</ul>
+<p>They both come with a <code>terminal</code> for writing bash
+commands.</p>
 </div>
 <div id="bring-in-your-code-from-github" class="section level2">
 <h2>Bring in your code from GitHub</h2>
+<p>NOTE: For a first time, it’s recommended that you create a repository
+via <a href="https://github.com/">GitHub</a>, with a bare minimum of two
+files, the <code>README.md</code> and <code>.gitignore</code>. These are
+easily included once you enable the check-boxes during creation
+process.</p>
+<p>Once you have your repository ready or if using an existing
+repository, <code>clone</code> the repository into your cloud
+environment in the VM. For Rstudio, instructions on how to do this can
+be found in this <a href="https://oxgskimcm.atlassian.net/wiki/spaces/TerraBio/pages/45514753/Working+with+Git+GitHub+on+terra">confluence</a>
+page or in this <a href="https://nceas.github.io/oss-lessons/version-control/4-getting-started-with-git-in-RStudio.html">blog
+post</a></p>
+<p>Generally, to clone your repository into Jupyter VM:-</p>
+<ul>
+<li>Go to your GitHub repo, click on the green button labelled “Code”,
+copy the <code>HTTPS</code> link.</li>
+<li>In the terminal, run the command
+<code>git clone https_link</code></li>
+</ul>
+<pre class="bash"><code>git clone https://github.com/IMCM-OX/terra-wdl-demo.git</code></pre>
 </div>
 <div id="bring-in-your-data-from-terra-workspace" class="section level2">
 <h2>Bring in your data from Terra Workspace</h2>
@@ -388,8 +430,8 @@ GitHub</a></li>
 <div id="push-your-codescripts-to-github" class="section level2">
 <h2>Push your code/scripts to GitHub</h2>
 </div>
-<div id="hut-down-the-vm" class="section level2">
-<h2>hut down the VM</h2>
+<div id="shut-down-the-vm" class="section level2">
+<h2>Shut down the VM</h2>
 </div>
 </div>
 
