@@ -46,7 +46,6 @@ Generally, to clone your repository into Jupyter VM:-
 
 ```bash
 # clone your code repository into the CE
-
 git clone https://github.com/IMCM-OX/interactive-analysis-terra.git
 
 ```
@@ -60,7 +59,44 @@ Once you have all codes/scripts in the C.E, next is to bring your data for analy
 - **data:** This is the destination your raw data that you shall copy from a workspace
 - **output:** This is the destination of any output (plot, pdf, processed data etc) emanating from your data analysis efforts.
 
-In R, this can be done dynamically like so:-
+In R, this can be done dynamically like so in an R script:-
+
+```bash
+# create `data` folder if doesn't exist <in the current working directory>
+if (!file.exists(xfun::relative_path(here::here("data")))){
+  dir.create(xfun::relative_path(here::here("data")),
+             recursive = TRUE)}
+
+# create `output` folder if doesn't exist <in the current working directory>
+if (!file.exists(xfun::relative_path(here::here("output")))){
+  dir.create(xfun::relative_path(here::here("output")),
+             recursive = TRUE)}
+
+```
+
+In Jupyter CE, you can do this via terminal
+
+
+```bash
+# create `data` folder if doesn't exist <in the current working directory>
+mkdir data
+
+# create `output` folder if doesn't exist <in the current working directory>
+mkdir output
+
+```
+
+### `.gitignore`
+
+Once you have the two subfolders, make sure you exclude them from your future GitHub commits by editing the `.gitigonre` file and specifying that they be excluded from `commit`s and `pushe`s. You DO NOT want to commit/push data into GitHub; and this prevents that.
+
+```bash
+# put this lines in .gitignore file
+data/
+output/
+
+```
+
 
 
 
