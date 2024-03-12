@@ -2,12 +2,12 @@
 
 This repository and associated files is meant for a toy demo for Interactive Analysis on Terra.Bio cloud platform.
 
-NOTE: It DOES NOT cover nor teach how methodically perform an analysis, but it acts as "cookbook" of best practices to easy your pain while working interactively on Terra; specifically
+NOTE: It DOES NOT cover nor teach how to methodically perform an analysis, but it acts as "cookbook" of best practices to ease your pain while working interactively on Terra; specifically:-
 
-- Files/code organization
-- Data handling and organization
+- Files/code organization.
+- Data handling and organization.
 - Associated output handling and archiving/storage.
-- Version control and collaboration
+- Version control and collaboration.
 
 # Contents
 
@@ -28,7 +28,7 @@ Create a Virtual Machine (VM) to start your interactive analysis. Follow [these]
 You can select one of the following common cloud environments:-
 
 - [Jupyter:](https://support.terra.bio/hc/en-us/articles/5075814468379-Starting-and-customizing-your-Jupyter-app) For analysis in Python programming language.
-- [Rstudio:](https://support.terra.bio/hc/en-us/articles/5075722115227) For analysis R statistical software.
+- [Rstudio:](https://support.terra.bio/hc/en-us/articles/5075722115227) For analysis in R statistical software.
 
 They both come with a `terminal` for writing bash commands.
 
