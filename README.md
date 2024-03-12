@@ -14,7 +14,7 @@ NOTE: It DOES NOT cover nor teach how to methodically perform an analysis, but i
 1. [Create a VM](#create-a-vm)
 2. [Bring in your code from GitHub](#bring-in-your-code-from-github)
 3. [Bring in your data from Terra Workspace](#bring-in-your-data-from-terra-workspace)
-  4. [Perform your Analysis](#perform-your-analysis)
+4. [Perform your Analysis](#perform-your-analysis)
 5. [Export your output to Terra Workspace](#export-your-output-to-terra-workspace)
 6. [Push your code and scripts to GitHub](#push-your-code-and-scripts-to-github")
 7. [Shut down the VM](#shut-down-the-vm)
@@ -63,13 +63,13 @@ In R, this can be done dynamically like so in an R script:-
 
 ```bash
 # create `data` folder if doesn't exist <in the current working directory>
-if (!file.exists(xfun::relative_path(here::here("data")))){
-  dir.create(xfun::relative_path(here::here("data")),
+if (!file.exists(xfun::relative_path("data"))){
+  dir.create(xfun::relative_path("data"),
              recursive = TRUE)}
 
 # create `output` folder if doesn't exist <in the current working directory>
-if (!file.exists(xfun::relative_path(here::here("output")))){
-  dir.create(xfun::relative_path(here::here("output")),
+if (!file.exists(xfun::relative_path("output"))){
+  dir.create(xfun::relative_path("output"),
              recursive = TRUE)}
 
 ```
