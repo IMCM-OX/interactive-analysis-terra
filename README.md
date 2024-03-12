@@ -98,22 +98,66 @@ output/
 ```
 
 
+### `copy data from workspace`
 
+Use `gsutil` command line tools to copy the data from your working directory into the `data` sub-directory. 
 
+```bash
+# copy raw data into `data` subdirectory
+gsutil cp `gs://path_to_terra_workspace` data/         # using comand line
 
+# From an R script
+system(command = "gsutil cp `gs://path_to_terra_workspace` data/")
+
+```
 
 ## Perform your Analysis
 
+Now you have your raw data inside `data` subfolder, it's time to import it into your software (python or R) and begin your analysis. All your data import commands shall point to `data/some_file.ext` or `data/data_sub_folder/some_file.ext`.
+
+This is important in 3 ways:-
+
+- Keeps your file paths consistent across all your scripts.
+- Your whole analysis is reproducible in another VM/CE with the same set up; i.e. `data` subfolder for storing raw data
+- Above all, collaboration becomes easy, no need to change file paths back and forth in the same script.
+
+**`output`** subfolder:
+Any analysis effort, processed data or plots and documents should be deposited in this folder. You can have expand the organization inside this folder to include further sub-folders as needed.
 
 
 ## Export your output(s) to Terra Workspace
 
+Once done with your analysis effort, it's time to start doing housekeeping. First, if created files or products of an analysis inside the `output` folder that you want fed back to a Terra workspace for storage, this is the time. The process is almost similar to copying raw data into `data` subfolder using `gsutil` command line tools.
 
+```bash
+# copy files/products from `output` subdirectory to Terra workspace
+gsutil cp  output/some_file(s)  `gs://path_to_terra_workspace/sub_folder/`       # using comand line
+
+# From an R script
+system(command = "gsutil cp  output/some_file(s)  `gs://path_to_terra_workspace/sub_folder/`")
+
+```
+
+This ensure that the files or data generated from an analysis that needs to be re-used later is safely stored in a respective Terra workspace and are not lost in the event we shut down the VM and delete the PD.
 
 ## Push your code/scripts to GitHub
 
+Your analysis output is safe in a Terra workspace, now it's time to give our `upadted` analysis code/script a safe home as well 🙂.
 
+Do the following (usual git versioning workflow):
 
+```bash
+# stage the edited codes
+git add .                                      # to stage all the edited scripts
+git add R/script_name.R||python/script_name.py # to stage a specific script
+
+# commit
+git commit -m"descriptive_commit_message"     # commit the staged scripts
+
+# push to github
+git psh                                       # push to GitHub your "new scripts"
+
+```
 
 ## Shut down the VM
 
