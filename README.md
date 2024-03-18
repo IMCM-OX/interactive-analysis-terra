@@ -11,7 +11,7 @@ NOTE: It DOES NOT cover nor teach how to methodically perform an analysis, but i
 
 # Contents
 
-1. [Create a VM](#create-a-vm)
+1. [Create analysis enviroment](#create-analysis-enviroment)
 2. [Bring in your code from GitHub](#bring-in-your-code-from-github)
 3. [Bring in your data from Terra Workspace](#bring-in-your-data-from-terra-workspace)
 4. [Perform your Analysis](#perform-your-analysis)
@@ -21,7 +21,7 @@ NOTE: It DOES NOT cover nor teach how to methodically perform an analysis, but i
 
 
 
-## Create a VM
+## Create analysis enviroment
 
 Create a Virtual Machine (VM) to start your interactive analysis. Follow [these](https://support.terra.bio/hc/en-us/articles/360038125912-Your-interactive-analysis-VM-Cloud-Environment#h_01EWE22VY089T7SVA9J403CD48) instructions to get you there.
 
@@ -123,6 +123,19 @@ This is important in 3 ways:-
 
 **`output`** subfolder:
 Any analysis effort, processed data or plots and documents should be deposited in this folder. You can have expand the organization inside this folder to include further sub-folders as needed.
+
+
+### About the analysis
+
+This is a toy analysis for demo purposes using the `mtcars` and/or `iris` data sets from R to perform simple wrangling and visualization. The ideas can be expanded and be used to any kind of rectangular dataset i.e. flat file.
+
+**Tasks:**
+- Copy data from workspace
+- Clean iris data by converting the columns (measurement in centimetres) into metres
+- Create a simple scatter plot of `Sepal.Length` vs `Petal.Length`, color points by `Species`
+- Create a multi-faceted histogram of all the columns colorued by `Species`
+- Save/export the cleaned iris data back to the workspace under "processed" folder
+- Save/export the two plots back to the workspace under "processed" folder
 
 
 ## Export your output to Terra Workspace
