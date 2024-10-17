@@ -42,7 +42,7 @@ Once you have your repository ready or if using an existing repository, `clone` 
 Generally, to clone your repository into Jupyter VM:-
 
 - Go to your GitHub repo, click on the green button labelled "Code", copy the `HTTPS` link.
-- In the terminal, run the command `git clone https_link`
+- In the terminal, run the command `git clone <https_link>`
 
 ```bash
 # clone your code repository into the CE
@@ -104,7 +104,7 @@ Use `gsutil` command line tools to copy the data from your working directory int
 
 ```bash
 # copy raw data into `data` subdirectory
-gsutil cp `gs://path_to_terra_workspace` data/         # using comand line
+gsutil cp -r `gs://path_to_terra_workspace` data/         # using comand line
 
 # From an R script
 system(command = "gsutil cp `gs://path_to_terra_workspace` data/")
@@ -140,7 +140,7 @@ This is a toy analysis for demo purposes using the `mtcars` and/or `iris` data s
 
 ## Export your output to Terra Workspace
 
-Once done with your analysis effort, it's time to start doing housekeeping. First, if created files or products of an analysis inside the `output` folder that you want fed back to a Terra workspace for storage, this is the time. The process is almost similar to copying raw data into `data` subfolder using `gsutil` command line tools.
+Once done with your analysis effort, it's time to start doing housekeeping. First, if you created files or products of an analysis inside the `output` folder and you want them fed back into a Terra workspace for storage, now's the time. The process is analagous to copying raw data into `data` subfolder using `gsutil` command line tools.
 
 ```bash
 # copy files/products from `output` subdirectory to Terra workspace
