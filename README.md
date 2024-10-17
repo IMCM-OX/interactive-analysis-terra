@@ -144,7 +144,7 @@ Once done with your analysis effort, it's time to start doing housekeeping. Firs
 
 ```bash
 # copy files/products from `output` subdirectory to Terra workspace
-gsutil cp  output/some_file(s)  `gs://path_to_terra_workspace/sub_folder/`       # using comand line
+gsutil cp -r output/some_file(s)  `gs://path_to_terra_workspace/sub_folder/`       # using comand line
 
 # From an R script
 system(command = "gsutil cp  output/some_file(s)  `gs://path_to_terra_workspace/sub_folder/`")
@@ -168,7 +168,7 @@ git add R/script_name.R||python/script_name.py # to stage a specific script
 git commit -m"descriptive_commit_message"     # commit the staged scripts
 
 # push to github
-git psh                                       # push to GitHub your "new scripts"
+git push origin <branch name>                 # push to GitHub your "new scripts"
 
 ```
 
