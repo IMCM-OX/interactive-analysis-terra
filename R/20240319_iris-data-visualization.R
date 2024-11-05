@@ -13,7 +13,8 @@ pacman::p_load(AnVIL,     # cloud computing in Terra
                lubridate, # working with dates
                rio,       # data import/export
                here,      # manage file paths
-               tidyverse) # data wrangling and visualization
+               tidyverse, # data wrangling and visualization
+               glue)      # string manipulation
 
 
 # create `data` and `output` folders --------------------------------------
@@ -99,7 +100,7 @@ ggsave(
 
 ## use gsutil to copy contents back to the workspace
 
-system(command = "gsutil cp output/* gs://fc-317f434c-fe5c-4f4e-85d3-cf35e7f9dabe/data/processed_data")
+system(command = glue("gsutil cp output/* gs://fc-317f434c-fe5c-4f4e-85d3-cf35e7f9dabe/data/processed_data/{Sys.getenv('OWNER_EMAIL')}"))
 
 
 
