@@ -131,11 +131,13 @@ This is a toy analysis for demo purposes using the `mtcars` and/or `iris` data s
 
 ## IMPORTANT: Export your output to Terra Workspace
 
-Once done with your analysis effort, it's time to start doing housekeeping. First, if you created files or products of an analysis inside the `output` folder and you want them fed back into a Terra workspace for storage, now's the time. The process is analagous to copying raw data into `data` subfolder using `gsutil` command line tools.
+Once done with your analysis effort, it's time to start doing housekeeping. If you created files or analysis results inside the `output` folder and you need to store them in Terra for future sharing/use. The process is analagous to a previous step of copying raw data into our `data` subfolder using `gsutil` command line tools.
+
+For the purposes of this demo we want to use an environment variable `$OWNER_EMAIL` so you and everyone else can see your own output in the shared workspace. Do this by adding '/$OWNER_EMAIL' to the end of your bucket path. Note that this is not commonly done outside of this demo within the IMCM. 
 
 ```bash
 # copy files/products from `output` subdirectory to Terra workspace in the command line
-gsutil cp -r output/some_file(s)  `gs://path_to_terra_workspace/sub_folder/`      
+gsutil cp -r output/some_file(s)  `gs://workspace_bucket/path_to_terra_workspace_sub_folder/$OWNER_EMAIL`      
 
 # OPTIONAL Advanced: Programmatically from an R script
 system(command = "gsutil cp  output/some_file(s)  `gs://path_to_terra_workspace/sub_folder/`")
