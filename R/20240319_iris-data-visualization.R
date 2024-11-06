@@ -99,7 +99,7 @@ ggsave(
 
 ## STEP 5: Use gsutil to copy contents of the output folder back to the IMCMWorkshop2024 workspace bucket 
 ## into its 'data/processed_data' folder
-if (length(system(paste("gsutil ls", glue("gs://fc-317f434c-fe5c-4f4e-85d3-cf35e7f9dabe/data/processed_data/{Sys.getenv('OWNER_EMAIL')}"), intern = TRUE, ignore.stderr = TRUE))) == 0) {
+if (system(paste("gsutil ls", glue("gs://fc-317f434c-fe5c-4f4e-85d3-cf35e7f9dabe/data/processed_data/{Sys.getenv('OWNER_EMAIL')}"), ignore.stdout = TRUE, ignore.stderr = TRUE)) != 0) {
   stop("FAIL: The outputs were not properly copied into the workspace bucket. Please refer to the Github notes or ask for help.")
 } else {
   print("SUCCESS. Congrats you've completed the steps in this workshop. You may now chose to delete your environment.")
