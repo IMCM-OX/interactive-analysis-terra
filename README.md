@@ -25,7 +25,7 @@ NOTE: It DOES NOT cover nor teach how to methodically perform an analysis, but i
 
 Create a Virtual Machine (VM) to start your interactive analysis. Follow [these](https://support.terra.bio/hc/en-us/articles/360038125912-Your-interactive-analysis-VM-Cloud-Environment#h_01EWE22VY089T7SVA9J403CD48) instructions to get you there.
 
-You can select one of the following common cloud environments:-
+You can select one of the following common cloud environments (CE):-
 
 - [Jupyter:](https://support.terra.bio/hc/en-us/articles/5075814468379-Starting-and-customizing-your-Jupyter-app) For analysis in Python programming language.
 - [Rstudio:](https://support.terra.bio/hc/en-us/articles/5075722115227) For analysis in R statistical software.
@@ -73,7 +73,7 @@ mkdir output
 
 ```
 
-## OPTIONAL Advanced: This can be done programmatically like so in an R script:-
+### OPTIONAL Advanced: This can be done programmatically like so in an R script:-
 
 ```bash
 # create `data` folder if doesn't exist <in the current working directory>
