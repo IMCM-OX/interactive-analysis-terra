@@ -129,7 +129,7 @@ This is a toy analysis for demo purposes using the `mtcars` and/or `iris` data s
 - Save/export the two plots back to the workspace under "processed" folder
 
 
-## Export your output to Terra Workspace
+## IMPORTANT: Export your output to Terra Workspace
 
 Once done with your analysis effort, it's time to start doing housekeeping. First, if you created files or products of an analysis inside the `output` folder and you want them fed back into a Terra workspace for storage, now's the time. The process is analagous to copying raw data into `data` subfolder using `gsutil` command line tools.
 
