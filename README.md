@@ -88,13 +88,14 @@ if (!file.exists(xfun::relative_path("output"))){
 
 ```
 
-### `copy data from workspace`
+### IMPORTANT: Copy input data from another workspace
 
-Use `gsutil` command line tools to copy the data from your working directory into the `data` sub-directory. 
+Use `gsutil` command line tools to copy the data from a Data Assets Workspace into the `data` sub-directory of your analysis workspace. 
+You can find the `workspace_bucket` name in the cloud information section after clicking on any Terra workspace. 
 
 ```bash
 # copy raw data into `data` subdirectory
-gsutil cp -r `gs://path_to_terra_workspace` data/         # using comand line
+gsutil cp -r `gs://workspace_bucket/path_to_terra_workspace` data/         # using comand line
 
 # OPTIONAL Advanced: From an R script
 system(command = "gsutil cp `gs://path_to_terra_workspace` data/")
